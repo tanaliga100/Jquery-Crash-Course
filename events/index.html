@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../selectors/style.css">
+    <title>Jquery</title>
+</head>
+<body>
+    <header>
+        <h1>Jquery Crash Course</h1>
+    </header>
+    <div id="container">
+        <h1>Events</h1>
+        <button id="btn1">Button 1</button>
+        <button id="btn2">Button 2</button>
+        <button id="btn3">Toggle</button>
+        <p class="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus dolores itaque voluptate. Illum, nobis, autem illo ullam officiis maiores ratione dicta excepturi eos adipisci repudiandae, natus alias distinctio corrupti?</p>
+
+        <!-- <div id="coords"></div> -->
+        <form id="form" action="">
+            <label for=""Name>Name</label>
+            <input type="text" name="" id="name"> <br>
+            <label for=""Email>Email</label>
+            <input type="email" name="" id="email"> <br>
+            <label for=""Gender>Gender</label> 
+            <select name="" id="gender"> <br>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select> <br>
+            <input type="submit" value="submit">
+        </form>
+
+        <div id="data">Data Here</div>
+     </div>
+
+    <script>
+        $(document).ready(function(){
+            //click
+            // $('#btn1').click(function(){
+            //     $('.para1').hide();
+            // })
+            
+            // $('#btn2').on('click', function(){
+            //     $('.para1').show();
+            // })
+
+            // $('#btn3').on('click', function(){
+            //     $('.para1').toggle();
+            // })
+
+            //dblclick
+
+            // $('#btn3').on('dblclick', function(){
+            //     $('.para1').toggle();
+            // })
+
+            //hover
+            // $('#btn3').hover(function(){
+            //     $('.para1').toggle();
+            // })
+
+            //mousemove
+            // $('#btn3').on('mousemove', function(){
+            //     $('.para1').toggle();
+            // })
+
+            // $('#btn1').on('mousedown', function(){
+            //     $('.para1').toggle();
+            // })
+            // $('#btn1').on('mouseup', function(){
+            //     $('.para1').toggle();
+            // })
+
+            // $('#container').on('mousemove', function(e){
+            //     $('#coords').html('Coords: <br> Y = '+e.clientY+" <br> X = "+e.clientX);
+            // })
+
+            //focus
+            // $('input').focus(function(){
+            //     $(this).css('background-color', 'pink')
+            // })
+            // $('input').blur(function(){
+            //     $(this).css('background-color', 'white')
+            // })
+
+            // keyup
+            // $('input').keyup(function(e){
+            //     console.log(e.target.value);
+            // })
+
+            // $('#gender').change(function(e){
+            //     console.log(e.target.value);
+            // })
+            
+            //form
+
+            $('#form').submit(function(e){
+                e.preventDefault();
+                var name = $('input#name').val();
+                var email = $('input#email').val();
+                var gender = $('select#gender').val();
+            
+                $('#data').append('<br>' + name +'<br>' + email + '<br>' + gender);
+                // $('#data').appendTo( `<th>
+                //     Data
+                //     </th>
+                //     <tr>    Name
+                //         </tr>
+                //     <tr>   Email
+                //         </tr>
+                //     <tr> Gender
+                //         </tr>
+                //         <tbody>
+                //             ${name}
+                //             ${email}
+                //             ${gender}
+                //             </tbody>`)
+
+              
+            })
+        });
+
+    </script>
+    
+</body>
+</html>

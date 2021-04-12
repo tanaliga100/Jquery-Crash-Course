@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../selectors/style.css">
+    <title>Jquery</title>
+</head>
+    <style>
+        #box{
+            background-color: #333;
+            color: white;
+            width: 500px;
+            height: 90px;
+            padding: 40px;
+            text-align: center;
+            justify-items: center;
+            vertical-align: middle;
+        }
+        #box2{
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+    </style>
+<body>
+    <header>
+        <h1>Jquery Crash Course</h1>
+    </header>
+    <div id="container">
+        <button id="btnFadeIn">Fade In</button>
+        <button id="btnFadeOut">Fade Out</button>
+        <button id="btnFadeTog">Fade Tog</button>
+
+        <hr>
+        <button id="btnSlideUp">Slide UP</button>
+        <button id="btnSlideDown">Slide DOWN</button>
+        <button id="btnSlideTog">Slide Tog</button>
+
+
+        <hr>
+
+        <div id="box">
+            <h1>Hello World</h1>
+        </div>
+
+        <hr>
+      
+
+        <button id="moveleft">Left</button>
+        <button id="moveright">Right</button>
+        <button id="movearound">Around</button>
+        <div id="box2"></div>
+    </div>
+<script>
+
+    $(document).ready(function(){
+
+        $('#btnFadeOut').click(function(){
+            $('#box').fadeOut('2000')
+        })
+        $('#btnFadeIn').click(function(){
+            $('#box').fadeIn('2000')
+
+        })
+        $('#btnFadeTog').on('click', function(){
+            $('#box').fadeToggle();
+        })
+        $('#btnSlideDown').click(function(){
+            $('#box').slideDown('fast');
+        })
+        $('#btnSlideUp').click(function(){
+            $('#box').slideUp('fast');
+        })
+        $('#btnSlideTog').click(function(){
+            $('#box').slideToggle('fast');
+        })
+        $('#moveright').click(function(){
+            $('#box2').animate({
+                left: 500,
+                width: '200px',
+                height: '300px',
+                opacity: '0.6'
+            })
+        })
+        $('#moveleft').on('click', function(){
+            $('#box2').animate({
+                left: 0,
+                width: '100px',
+                height: '100px',
+                opacity: '1'
+            })
+        })
+
+        $('#movearound').on('click', function(){
+            var box = $('#box2');
+            box.animate({
+                left: 300
+            });
+            box.animate({
+                top: 300,
+                left: 300
+            });
+            box.animate({
+                left: 0,
+                top: 300
+            });
+            box.animate({
+                bottom: 300,
+                top: 0
+            });
+
+
+        })
+
+    })
+
+</script>
+    
+</body>
+</html>

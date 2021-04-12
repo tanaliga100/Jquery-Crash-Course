@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../selectors/style.css">
+    <title>Jquery</title>
+    <style>
+
+        .myClass{
+            color: blue;
+            background: black
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jquery Crash Course</h1>
+    </header>
+    <div id="container">
+        <button id="btn1">Button1</button>
+        <button id="btn2">Button2</button>
+        <button id="btn3">Apply</button>
+        
+        <p class="para1">This is a paragraph</p>
+        <p class="para2">This is another paragraph</p>
+        <div id="my-div"></div>
+        <input type="text" name="" id="new-item">
+        <ul>
+            <li>List Item 1</li>
+            <li>List Item 2</li>
+            <li>List Item 3</li>
+            <li>List Item 4</li>
+        </ul>
+
+        <hr>
+        <a href="http://google.com">Google</a>
+
+        <hr>
+        <ul id="users"></ul>
+    </div>
+    <script>
+        $(document).ready(function(){
+            // $('p.para1').css('color', 'red')
+            // $('#btn1').on('click', function(){
+            //     $('p.para1').css({background: 'grey', color: 'yellow', padding: '20px'})
+            //     $('p.para2').addClass('myClass')
+            // })
+            // $('#btn2').on('click', function(){
+            //     $('p.para2').toggleClass('myClass')
+            // })
+                // $('#btn3').on('click',  function(){
+                //     $('#my-div').html('<h1>Hello World</h1>');
+                //     alert()
+                // })
+
+                /*
+                $('#btn3').on('click', function(){
+                    $('ul').append('<li> Append this <li>');
+                    $('ul').prepend('<li> Append this on top <li>');
+                    $('hr').after('<h1> Hello Kimmy </h1>')
+                    $('ul').empty();
+                })
+                $('a').attr('target', '_blank')
+
+                */
+                // $('p').wrap('<h1>')
+
+                $('#new-item').keyup(function(e){
+                    var code = e.which;
+                    if(code === 13 ){
+                        e.preventDefault();
+                        $('ul').append('<li>' +e.target.value +'</li>')
+                    }
+                })
+
+                var myArray = ['Kimmy', 'Jordan', 'Kyla'];
+
+                $.each(myArray, function(i, val){
+                    $('#users').append('<li>'  +val+ '</li>')
+                })
+                
+        
+ 
+        })
+    </script>
+    
+</body>
+</html>

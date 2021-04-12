@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Jquery</title>
+</head>
+<body>
+    <header>
+        <h1>Jquery Crash Course</h1>
+    </header>
+    <div id="container">
+        <h1 id="heading1">
+            Heading One
+        </h1>
+        <p id="para1">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima rerum esse assumenda iusto pariatur dolores nihil fugit at, <span> neque soluta nemo explicabo laborum, et numquam quasi </span> a quod illo in.
+        </p>
+        <h1 class="heading2">
+            Heading Two
+        </h1>
+        <p class="para2">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima rerum esse assumenda iusto pariatur <span> dolores nihil fugit at, neque soluta nemo explicabo laborum, et numquam quasi </span> a quod illo in.
+        </p>
+
+        <ul class="list-item">
+            <li class="item1">Item-One</li>
+            <li class="item2">Item-Two</li>
+            <li class="item3">Item-Three</li>
+            <li class="item4">Item-Four</li>
+            <li class="item5">Item-FIve</li>
+        </ul>
+
+        <input type="button" value="button1">
+        <input type="submit" value="button2">
+        <input type="text" name="" id="">
+
+        <a href="http://google.com">Google</a> 
+        <a href="http://yahoo.com">Yahoo</a>
+    </div>
+
+    <script>
+        $('p span').css('color', 'red');
+        $('ul.list-item li:odd').css('background-color', 'grey');
+        $('ul.list-item li:even').css('background-color', 'yellow');
+        $('ul.list-item li:nth-child(2n)').css('list-style', 'none');
+
+        // $(':button').hide();
+
+        // $(':submit').hide();
+
+        // $(':text').hide();
+
+        // $('[href]').css('color', 'red')
+
+        // $('a[href="http://yahoo.com"]').css('color', 'green')
+
+    </script>
+    
+</body>
+</html>
